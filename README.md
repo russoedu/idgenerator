@@ -57,7 +57,7 @@ for (const str of ids) {
 ## Know issues
 Because this was created originally fo a small ID (with only 3 characters), creating an ID from an initial __string__ don't perform well, as all ID's prior to the sent one are created sequentially.
 
-So, for instance, if you use `ids = idGenerator('ZGD000GSHSH')`, All IDs until `ZGD000GSHSH` is found in the background and this might take a long time.
+So, for instance, if you use `ids = idGenerator('ZGD000GSHSH')`, All IDs until `ZGD000GSHSH` are found in the background and this might take a long time.
 
 I tried to find a solution to "skip" the IDs somehow, but couldn't find a good solution. Open to suggestions.
 
