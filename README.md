@@ -3,7 +3,7 @@ String / code / id sequential generator.
 
 [Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) [function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) that produces a sequence of IDs.
 
-The sequence is baed on a list of characters (_sequence_ parameter) and has the lenght based on an initial ID (_initialOrLength_ parameter when a string is passed) or on a length o characters (_initialOrLength_ parameter when a number is passed).
+The sequence is based on a list of characters (_sequence_ parameter) and has the lenght based on an initial ID (_initialOrLength_ parameter when a string is passed) or on a length o characters (_initialOrLength_ parameter when a number is passed).
 
 A generator function can be iterated with a 'for of', that will return the next ID for each iteration or can be called using "next()", that will return an object like `{ value: <the ID>, done: <boolean that is true when the sequence is finished> }`.
 
