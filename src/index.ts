@@ -55,9 +55,6 @@ export default function sequentialIdGenerator (initialOrLength: string | number 
 function * generator (initialOrLength: string | number, sequence: string) {
   let currentId = typeof initialOrLength === 'string' ? nextId(initialOrLength, sequence) : sequence[0].repeat(initialOrLength)
   const total = Math.pow(currentId.length, sequence.length)
-  // const { min, max } = getOffsets(sequence.length, currentId.length)
-
-  console.log(total)
 
   let index = 0
 
