@@ -8,9 +8,15 @@ describe('* idGenerator', () => {
   })
 
   test('updating a long ID and sequence to check performance', () => {
-    const ids = generator('Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847SxZZZ', '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
-    expect(ids.next()).toEqual({ value: 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847Sy000', done: false })
-    expect(ids.next()).toEqual({ value: 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847Sy001', done: false })
+    const ids = generator('h'.repeat(100) + 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847SxZZZ', '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    expect(ids.next()).toEqual({ value: 'h'.repeat(100) + 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847Sy000', done: false })
+    expect(ids.next()).toEqual({ value: 'h'.repeat(100) + 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847Sy001', done: false })
+  })
+
+  test('updating a long ID and sequence that is the end to check performance', () => {
+    const ids = generator('Z'.repeat(999) + 'Y', '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    expect(ids.next()).toEqual({ value: 'Z'.repeat(1000), done: false })
+    expect(ids.next()).toEqual({ value: undefined, done: true })
   })
 
   test('default generation', () => {
