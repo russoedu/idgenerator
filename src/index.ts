@@ -53,65 +53,65 @@ export default function sequentialIdGenerator (initialOrLength: string | number 
 }
 
 function * generator (initialOrLength: string | number, sequence: string) {
-  const currentId = typeof initialOrLength === 'string' ? initialOrLength : sequence[0].repeat(initialOrLength)
-  const firstId = sequence[0].repeat(currentId.length)
-  const { min, max } = getOffsets(sequence.length, currentId.length)
+  let currentId = typeof initialOrLength === 'string' ? nextId(initialOrLength, sequence) : sequence[0].repeat(initialOrLength)
+  const total = Math.pow(currentId.length, sequence.length)
+  // const { min, max } = getOffsets(sequence.length, currentId.length)
 
-  let index = min - 1
-  let tempId = firstId
+  console.log(total)
 
-  // Generate all IDs until the next one is found to set the correct index
-  if (typeof initialOrLength === 'string') {
-    while (index > -1) {
-      tempId = generateId(index, sequence)
-      index++
-      if (tempId === currentId) {
-        break
-      }
-    }
-  }
+  let index = 0
 
-  while (index > -1) {
-    if (index === max - 1) {
+  while (index < total) {
+    yield currentId
+    if (currentId === sequence[sequence.length - 1].repeat(currentId.length)) {
       break
     }
-    const string = generateId(index, sequence)
-    yield string
+    currentId = nextId(currentId, sequence)
     index++
   }
 }
 
 /**
  * Generates the next ID
- * @param index The index of the character
+ * @param id The current id
  * @param sequence The string with the sequence of characters to produce the IDs. The order of the characters mather to the result.
  */
-function generateId (index: number, sequence: string): string {
-  let string = ''
-  let modulo = 0
+function nextId (id: string, sequence: string): string {
+  let index = id.length - 1
+  let nextId = ''
+  let rest = 0
 
-  while (index > -1) {
-    modulo = index % sequence.length
-    string = sequence[modulo] + string
-    index = ((index - modulo) / sequence.length) - 1
+  while (index >= 0) {
+    // Character is added for the last char and if there is a rest from previus chars
+    if (index === id.length - 1 || rest) {
+      const increment = incrementChar(id[index], sequence)
+      nextId = increment.nextChar + nextId
+      rest = increment.rest
+    } else {
+      nextId = id[index] + nextId
+      rest = 0
+    }
+    index--
   }
 
-  return string
+  return nextId
 }
 
 /**
- * Calculates the index for minimum/maximum string length, used to limit the generator
- * @param characterCount The size of the sequence of possible charachters
- * @param offset The size (length) of the produced IDs
+ * Increment the character, returning the "rest" in case the character is the last in the sequence
+ * @param char The character to be incremented
+ * @param sequence The sequence of characters
  */
-function getOffsets (characterCount: number, offset: number) {
-  let indexOffset = 0
-  for (let i = 0; i < offset; i++) {
-    indexOffset += Math.pow(characterCount, i)
-  }
-  const max = indexOffset + Math.pow(characterCount, offset)
-  return {
-    min: indexOffset,
-    max
+function incrementChar (char: string, sequence: string) {
+  if (sequence.indexOf(char) === sequence.length - 1) {
+    return {
+      nextChar: sequence[0],
+      rest:     1,
+    }
+  } else {
+    return {
+      nextChar: sequence[sequence.indexOf(char) + 1],
+      rest:     0,
+    }
   }
 }

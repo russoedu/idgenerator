@@ -54,11 +54,10 @@ for (const str of ids) {
 } // '00', '01', '02', '10', '11', '12', '20', '21', '22'
 ```
 
-## Know issues
-Because this was created originally fo a small ID (with only 3 characters), creating an ID from an initial __string__ don't perform well, as all ID's prior to the sent one are created sequentially.
+## Version history
 
-So, for instance, if you use `ids = idGenerator('ZGD000GSHSH')`, All IDs until `ZGD000GSHSH` is found in the background and this might take a long time.
+### 1.0.0
+Working version but with performance issues for large IDs due to how the generator was constructed sequentially, going through every ID before the passed one.
 
-I tried to find a solution to "skip" the IDs somehow, but couldn't find a good solution. Open to suggestions.
-
-If you call the function using a __number__, the sequence starts from the first ID in the sequence instantly.
+### 2.0.0
+Improved ID generator can now continue to the next ID without going through all previous IDs. The code is also muche easier to understand how the next ID is being generated.

@@ -1,6 +1,18 @@
 import generator from './index'
 
 describe('* idGenerator', () => {
+  test('edge case', () => {
+    const ids = generator('ZY')
+    expect(ids.next()).toEqual({ value: 'ZZ', done: false })
+    expect(ids.next()).toEqual({ value: undefined, done: true })
+  })
+
+  test('updating a long ID and sequence to check performance', () => {
+    const ids = generator('Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847SxZZZ', '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    expect(ids.next()).toEqual({ value: 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847Sy000', done: false })
+    expect(ids.next()).toEqual({ value: 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847Sy001', done: false })
+  })
+
   test('default generation', () => {
     const ids = generator()
     expect(ids.next()).toEqual({ value: '00000', done: false })
@@ -13,12 +25,6 @@ describe('* idGenerator', () => {
     expect(ids.next()).toEqual({ value: 'aB', done: false })
     expect(ids.next()).toEqual({ value: 'Ba', done: false })
     expect(ids.next()).toEqual({ value: 'BB', done: false })
-    expect(ids.next()).toEqual({ value: undefined, done: true })
-  })
-
-  test('edge case', () => {
-    const ids = generator('ZY')
-    expect(ids.next()).toEqual({ value: 'ZZ', done: false })
     expect(ids.next()).toEqual({ value: undefined, done: true })
   })
 
