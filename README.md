@@ -1,4 +1,8 @@
 # sequential-id-generator
+[![Build Status](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/build.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/build-status/main)
+[![Code Coverage](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/?branch=main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/?branch=main)
+
 String / code / id sequential generator.
 
 [Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) [function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) that produces a sequence of IDs.
