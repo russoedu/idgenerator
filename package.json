@@ -7,8 +7,7 @@
   "scripts": {
     "build": "tsc",
     "install": "tsc",
-    "test": "jest",
-    "coverage": "jest && cat ./coverage/lcov.info | coveralls"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
