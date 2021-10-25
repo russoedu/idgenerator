@@ -1,5 +1,7 @@
 # sequential-id-generator
+![npm](https://img.shields.io/npm/v/sequential-id-generator)
 [![Build Status](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/build.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/build-status/main)
+
 [![Code Coverage](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/?branch=main)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/?branch=main)
 
@@ -12,6 +14,12 @@ Most sequential ID generators need you to start from the first ID, but this one 
 The sequence is based on a list of characters (_sequence_ parameter) and has the lenght based on an initial ID (_initialOrLength_ parameter when a string is passed) or on a length o characters (_initialOrLength_ parameter when a number is passed).
 
 A generator function can be iterated with a 'for of', that will return the next ID for each iteration or can be called using "next()", that will return an object like `{ value: <the ID>, done: <boolean that is true when the sequence is finished> }`.
+
+## Installation
+
+```
+$ npm i sequential-id-generator
+```
 
 ## Parameters
 The function has two parameters: initialOrLength and sequence.
