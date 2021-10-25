@@ -22,6 +22,7 @@ module.exports = {
     'text',
     'cobertura',
     'html',
+    'lcov'
   ],
   reporters: [
     'default',

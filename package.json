@@ -1,13 +1,14 @@
 {
   "name": "sequential-id-generator",
-  "version": "2.0.5",
+  "version": "2.0.7",
   "description": "String / code / id sequential generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "install": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "@types/node": "^16.10.3",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
+    "coveralls": "^3.1.1",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.2",
@@ -38,7 +40,6 @@
   "directories": {
     "lib": "lib"
   },
-  "dependencies": {},
   "keywords": [
     "code",
     "id",
