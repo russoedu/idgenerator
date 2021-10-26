@@ -1,5 +1,5 @@
 # sequential-id-generator
-![npm](https://img.shields.io/npm/v/sequential-id-generator)
+[![npm](https://img.shields.io/npm/v/sequential-id-generator)](https://www.npmjs.com/package/sequential-id-generator)
 [![CI Pipeline](https://github.com/russoedu/sequential-id-generator/actions/workflows/main.yml/badge.svg)](https://github.com/russoedu/sequential-id-generator/actions/workflows/main.yml)
 [![Build Status](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/build.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/build-status/main)
 [![Coverage Status](https://coveralls.io/repos/github/russoedu/sequential-id-generator/badge.svg?branch=ci)](https://coveralls.io/github/russoedu/sequential-id-generator?branch=ci)
