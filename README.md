@@ -1,8 +1,7 @@
 # sequential-id-generator
 ![npm](https://img.shields.io/npm/v/sequential-id-generator)
 [![Build Status](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/build.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/build-status/main)
-
-[![Code Coverage](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/russoedu/sequential-id-generator/badge.svg?branch=ci)](https://coveralls.io/github/russoedu/sequential-id-generator?branch=ci)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/russoedu/sequential-id-generator/?branch=main)
 
 String / code / id sequential generator.
