@@ -7,6 +7,17 @@ describe('* idGenerator', () => {
     expect(ids.next()).toEqual({ value: undefined, done: true })
   })
 
+  test('initial code is already the last', () => {
+    let ids = generator('ZZZZZZZZ')
+    expect(ids.next()).toEqual({ value: undefined, done: true })
+
+    ids = generator('Z')
+    expect(ids.next()).toEqual({ value: undefined, done: true })
+
+    ids = generator('55555', '012345')
+    expect(ids.next()).toEqual({ value: undefined, done: true })
+  })
+
   test('updating a long ID and sequence to check performance', () => {
     const ids = generator('h'.repeat(100) + 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847SxZZZ', '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
     expect(ids.next()).toEqual({ value: 'h'.repeat(100) + 'Y00LKRLFJLK098743908JDFLKLDSU39804D700ASFDH847Sy000', done: false })

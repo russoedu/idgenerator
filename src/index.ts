@@ -59,6 +59,7 @@ function * generator (initialOrLength: string | number, sequence: string) {
   let index = 0
 
   while (index < total) {
+    if (currentId === sequence[0].repeat(currentId.length) && typeof initialOrLength === 'string') break
     yield currentId
     if (currentId === sequence[sequence.length - 1].repeat(currentId.length)) {
       break
