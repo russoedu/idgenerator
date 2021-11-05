@@ -1,6 +1,6 @@
 {
   "name": "sequential-id-generator",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "String / code / id sequential generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,6 +10,9 @@
     "prepublishOnly" : "npm test",
     "test": "jest"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/russoedu/sequential-id-generator.git"
