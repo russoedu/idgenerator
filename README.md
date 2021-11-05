@@ -77,3 +77,6 @@ Working version but with performance issues for large IDs due to how the generat
 
 ### 2.0.0
 Improved ID generator can now continue to the next ID without going through all previous IDs. The code is also muche easier to understand how the next ID is being generated.
+
+### 2.1.1
+Fixed package instalation for projects without TS.

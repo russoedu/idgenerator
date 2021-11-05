@@ -1,12 +1,13 @@
 {
   "name": "sequential-id-generator",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "String / code / id sequential generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "install": "tsc",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test",
     "test": "jest"
   },
   "repository": {
