@@ -20,7 +20,7 @@ A generator function can be iterated with a 'for of', that will return the next 
 ## Installation
 
 ```
-$ npm i sequential-id-generator
+npm i sequential-id-generator
 ```
 
 ## Parameters
